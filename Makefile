@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gsemerar <gsemerar@student.42.fr>          +#+  +:+       +#+         #
+#    By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/11 18:08:49 by gsemerar          #+#    #+#              #
-#    Updated: 2022/02/14 12:37:16 by gsemerar         ###   ########.fr        #
+#    Updated: 2022/02/15 19:20:15 by gsemerar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FT_PRINTF		= ft_printf
 LIB_FT_PRINTF	= $(FT_PRINTF)/libftprintf.a
 CC				= gcc
 OPTION			= -I $(INCLUDE)
-CFLAGS			= -Wall -Werror -Wextra $(OPTION)
+#CFLAGS			= -Wall -Werror -Wextra $(OPTION)
 RM				= rm -f
 
 #Sources
@@ -43,6 +43,11 @@ $(NAME):	$(SERVER_OBJ) $(CLIENT)
 $(CLIENT):	$(CLIENT_OBJ)
 			make -C $(FT_PRINTF)
 			$(CC) $(CFLAGS) $(CLIENT_OBJ) $(LIB_FT_PRINTF) -o $(CLIENT)
+
+test:		$(SERVER_OBJ) $(CLIENT_OBJ)
+			make -C $(FT_PRINTF)
+			$(CC) -g $(OPTION) $(SERVER_OBJ) $(LIB_FT_PRINTF) -o $(NAME)
+			$(CC) -g $(OPTION) $(CLIENT_OBJ) $(LIB_FT_PRINTF) -o $(CLIENT)
 
 bonus:		all
 
