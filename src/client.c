@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsemerar <gsemerar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:07:26 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/02/17 19:37:35 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:28:10 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(int ac, char *av[])
 	{
 		while (av[2][++i])
 			ft_send_char(av[2][i], (pid_t) ft_atoi(av[1]));
-		ft_printf("Byte sent:\t%d\n", g_bsr.byte_sent);
-		ft_printf("Byte received:\t%d\n", g_bsr.byte_received);
+		ft_printf("Byte sent to the server:\t%d\n", g_bsr.byte_sent);
+		ft_printf("Byte received from the server:\t%d\n", g_bsr.byte_received);
 	}
 	else
 		exit(FEW_ARGUMENTS);

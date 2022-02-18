@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsemerar <gsemerar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gsemerar <gsemerar@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:07:24 by gsemerar          #+#    #+#             */
-/*   Updated: 2022/02/17 19:50:13 by gsemerar         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:28:27 by gsemerar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void)
 	sigaction(SIGUSR1, &su1, NULL);
 	sigaction(SIGUSR2, &su2, NULL);
 	g_c.n_bit = 0;
+	g_c.character = 0;
 	ft_printf("Server PID:\t%d\n", getpid());
 	while (1)
 		pause();
